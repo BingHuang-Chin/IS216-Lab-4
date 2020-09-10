@@ -51,9 +51,16 @@
                     Note: use Math.random(), Math.floor()
             */
             function showExtra2() {
-                
-                // Add Code Here
+                const randomInt = max => Math.floor(Math.random() * Math.floor(max))
+                const availableCharacters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+                let generatedPassword = ''
 
+                for (let i = 0; i < 8; i++)
+                    generatedPassword += availableCharacters[randomInt(availableCharacters.length)]
+
+                document.getElementById('demo').innerHTML = `
+                    Generated Password: ${generatedPassword}
+                `
             }
 
             /* 3. In number theory, a perfect number is a positive integer that is 
