@@ -99,9 +99,11 @@
                     For example, 10 -> 1010, 12 -> 1100
             */
             function showExtra4() {
-                
-               // Add Code Here
-               
+                let numberInput = -1
+                while (isNaN(Number(numberInput)) || !Number.isInteger(Number(numberInput)) || numberInput < 0)
+                    numberInput = prompt('Please provide an integer!')
+
+                document.getElementById('demo').innerHTML = (+numberInput).toString(2)
             }
 
             /* 5. Write a function that requests the user’s name 
