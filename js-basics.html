@@ -34,9 +34,16 @@
             · Circumference of circle = π X 2 X radius 
             */
             function showExtra1() {
+                const radius = prompt('Provide a radius!')
+                if (isNaN(radius)) return
 
-                // Add Code Here
-                
+                const area = Math.PI * radius ** 2
+                const circumference = Math.PI * 2 * radius
+
+                document.getElementById('demo').innerHTML = `
+                    Area: ${parseFloat(area.toFixed(2))} <br />
+                    Circumference: ${parseFloat(circumference.toFixed(2))}
+                `
             }
 
             /* 2. Write a function that generates a random password of 8 characters
