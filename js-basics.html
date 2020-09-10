@@ -73,9 +73,25 @@
                     Some examples of perfect numbers are 6, 28, 496
             */
             function showExtra3() {
-              
-               // Add Code Here
-               
+                const isPerfectNumber = number => {
+                    let total = 0
+
+                    // Brute force method
+                    for (let i = 1; total < number; i++) {
+                        total += i
+
+                        if (total === number)
+                            return true
+                    }
+
+                    return false
+                }
+
+                const numberInput = prompt('Please provide a number!')
+                if (isNaN(numberInput)) return
+
+                const resultString = isPerfectNumber(+numberInput) ? 'Perfect Number!' : 'Not Perfect Number!'
+                document.getElementById('demo').innerHTML = `<h1>${resultString}</h1>`
             }
 
 
