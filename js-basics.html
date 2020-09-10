@@ -121,9 +121,24 @@
                 Hint: use toUpperCase(), charAt()
             */
             function showExtra5() {
-                
-               // Add Code Here
-               
+                const name = prompt('Please provide your name!')
+                if (!isNaN(Number(name))) return
+
+                const print = name => document.getElementById('demo').innerHTML = name
+                const setFirstLetterCap = name => name.charAt(0).toUpperCase() + name.slice(1)
+
+                let words = name.split(' ')
+                if (words.length === 1) {
+                    print(words[0].toUpperCase())
+                } else if (words.length === 2) {
+                    const [first, second] = words
+                    print(`${second.toUpperCase()} ${setFirstLetterCap(first)}`)
+                } else {
+                    const [first, ...rest] = words
+                    const updatedRest = rest.map(word => setFirstLetterCap(word))
+                    const restJoinedName = updatedRest.join(' ')
+                    print(`${first.toUpperCase()} ${restJoinedName}`)
+                }
             }
 
 
