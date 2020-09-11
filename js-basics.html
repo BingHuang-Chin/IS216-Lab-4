@@ -349,9 +349,27 @@
                     Note: Create your own arrays of objects in the function. 
             */
             function showExtra11() {
-                
-               // Add Code Here
-               
+                const cartItems = [
+                    { name: 'pencil', price: 1.25 },
+                    { name: 'pen', price: 2.85 },
+                    { name: 'paper', price: 22.22 }
+                ]
+
+                document.getElementById('demo').innerHTML = ''
+
+                let total = 0
+                cartItems.forEach(item => {
+                    total += item.price
+                    document.getElementById('demo').innerHTML += `
+                        Item: ${item.name}; Price: $${item.price}
+                        <br />
+                    `
+                })
+
+                document.getElementById('demo').innerHTML += `
+                    <hr />
+                    <strong>Total payable: $${total}</strong>
+                `
             }
 
         </script>
