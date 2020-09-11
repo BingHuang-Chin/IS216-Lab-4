@@ -205,9 +205,18 @@
                 Hint: explore includes()
             */
             function showExtra7() {
-                
-               // Add Code Here
-               
+                const str1 = prompt('Enter string 1')
+                const str2 = prompt('Enter string 2')
+
+                let result = 'Bingo!'
+                for (const char of str1.toLowerCase()) {
+                    if (!str2.toLowerCase().includes(char)) {
+                        result = 'Nope :('
+                        break
+                    }
+                }
+
+                document.getElementById('demo').innerHTML = result
             }
 
             /* 8. Write a function that requests two integers, 
