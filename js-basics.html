@@ -324,13 +324,21 @@
                     Hint: explore concat()
             */
             function showExtra10() {
-
                 var persons1 = [{name:"John",age:29}, {name:"Jesper",age:21}, {name:"Jack", age:40}];
                 var persons2 = [{name:"Mary",age:23}, {name:"Jennifer",age:32}];
+
+                document.getElementById('demo').innerHTML = ''
+
+                const mergedPeople = persons1
+                    .concat(persons2)
+                    .sort((a, b) => a.age - b.age)
                 
-               // Add Code Here
-               
-               
+                mergedPeople.forEach(person => {
+                    document.getElementById('demo').innerHTML += `
+                        Name: ${person.name}; Age: ${person.age}
+                        <br/>
+                    `
+                })
             }
 
             /* 11. Write a function that computes the total amount to be paid, 
