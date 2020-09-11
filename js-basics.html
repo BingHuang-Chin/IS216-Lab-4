@@ -232,9 +232,31 @@
                 Hint: explore Math.sqrt(), Math.floor(), Math.ceil(), Math.pow()
             */
             function showExtra8() {
+                const min = prompt('Please enter a min number!')
+                const max = prompt('Please enter a max number!')
                 
-               // Add Code Here
-               
+                // Assumes that min an max will always be a positive INT
+                if (isNaN(Number(min)) || isNaN(Number(max))) {
+                    alert('You did not enter valid number')
+                    return
+                }
+
+                const perfectSquareInts = []
+                let startingIndex = Math.sqrt(min)
+                if (!Number.isInteger(startingIndex)) {
+                    startingIndex = Math.ceil(startingIndex)
+                }
+
+                let total = 0
+                while (total < max) {
+                    if (total > 0)
+                        perfectSquareInts.push(total)
+                    
+                    total = Math.pow(startingIndex, 2)
+                    startingIndex++
+                }
+
+                document.getElementById('demo').innerHTML = perfectSquareInts.join(' ')
             }
 
             /* 9. Write a function that gets a set of integer inputs from the user. 
