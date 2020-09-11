@@ -235,7 +235,7 @@
                 const min = prompt('Please enter a min number!')
                 const max = prompt('Please enter a max number!')
                 
-                // Assumes that min an max will always be a positive INT
+                // Assumes that min an max will always be a positive number
                 if (isNaN(Number(min)) || isNaN(Number(max))) {
                     alert('You did not enter valid number')
                     return
@@ -248,7 +248,7 @@
                 }
 
                 let total = 0
-                while (total < max) {
+                while (total <= max) {
                     if (total > 0)
                         perfectSquareInts.push(total)
                     
