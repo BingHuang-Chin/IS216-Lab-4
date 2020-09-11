@@ -276,9 +276,41 @@
                 Hint: explore split(), sort(), map()
             */
             function showExtra9() {
-                
-               // Add Code Here
-               
+                const isValidNumbers = numbers => {
+                    for (const number of numbers) {
+                        if (isNaN(Number(number)) || !Number.isInteger(Number(number))) {
+                            alert('You entered an invalid integer!')
+                            return false
+                        }
+                    }
+
+                    return true
+                }
+
+                const numbersInput = prompt('Please enter a set of integer numbers, each number separated by a space!')
+                let numbers = numbersInput.split(' ')
+
+                if (!isValidNumbers(numbers)) return
+
+                numbers = numbers
+                    .sort((a, b) => a - b)
+                    .map(number => +number)
+
+                // Assumes that input have at least 3 numbers
+                const median = numbers.length % 2
+                    ? numbers[Math.floor(numbers.length / 2)]
+                    : (numbers[Math.floor(numbers.length / 2) - 1] + numbers[Math.floor(numbers.length / 2)]) / 2
+
+                document.getElementById('demo').innerHTML = `
+                    The result:
+                    <hr />
+                    <br />
+
+                    Numbers: ${numbers.join(',')} <br />
+                    Min: ${numbers[0]} <br />
+                    Max: ${numbers[numbers.length - 1]} <br />
+                    Median: ${median}
+                `
             }
 
             /* 10. Write a function that merges two arrays of objects, representing persons. 
