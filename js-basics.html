@@ -170,10 +170,19 @@
                         ==> Substring [F] is found
             */
             function showExtra6() {
-                
-               // Add Code Here
-               
+                const text = prompt('Enter a string')
+                const startText = prompt('Enter search start string')
+                const endText = prompt('Enter search end string')
 
+                // Assuming that start and end always has at least 1 character
+                const startIndex = text.indexOf(startText)
+                const endIndex = text.indexOf(endText)
+
+                let result = 'No such substring'
+                if (startIndex >= 0 && endIndex >= 0)
+                    result = `Substring [${text.slice(startIndex, endIndex + 1)}] is found`
+
+                document.getElementById('demo').innerHTML = result
             }
 
              /* 7. Write a function that asks the user to enter two strings, 
